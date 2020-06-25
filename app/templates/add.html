@@ -1,0 +1,28 @@
+{%extends 'base.html' %}
+{% block content %}
+<nav class="navbar mynavbar ">
+    <span class="navbar-brand mb-1 h1 myuser">Hello {{user}}!</span>
+    <span class="navbar-brand mb-1 h1 myuser">
+        <a class="btn btn-link myuser" style="padding-right: 35px;" href="/">Home</a>
+        <a class="btn btn-link myuser" style="padding-right: 35px;">Add grade</a>
+        <a class="btn btn-link myuser" href="login/login">Logout</a>
+
+    </span>
+</nav>
+
+<form method="post">
+    <section id="auth">
+        <section id="login">
+            <h1 class="login-title">Add Grade</h1>
+
+            {% csrf_token %}
+            {{form}}
+            <br>
+            <input class="btn btn-primary mybtn" type="submit">
+
+        </section>
+    </section>
+
+</form>
+
+{% endblock %}
